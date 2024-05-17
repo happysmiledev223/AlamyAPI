@@ -131,7 +131,7 @@ router.get('/downloaditem', function (req, res) {
                 request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
             });
         };            
-        download(response.body.url, './public/uploads/tmp_'+ id +'.jpg', async function(){
+        download(response.body.url, './tmp/tmp_'+ id +'.jpg', async function(){
             console.log('done');
             await resize(id);
             res.json(response);

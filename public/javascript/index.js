@@ -9,7 +9,6 @@ function SearchImage() {
     products=[];
     $("#images tbody").empty();
     let str = $(".dropdown-toggle").html() + ' ' + $("#search").val();
-    console.log('getAccessTokenParameters', $("#alamy_cli").val(), '&key=', $("#alamy_key").val());
     $.ajax({
         url: '/alamy/getacesstoken?client=' + $("#alamy_cli").val() + '&key=' + $("#alamy_key").val(),
         type: 'Get',

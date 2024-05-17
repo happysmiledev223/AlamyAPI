@@ -14,8 +14,8 @@ const loadImage = (imageSrc) => new Promise(resolve => {
 });
 
 module.exports = async function resize(id) {
-    const readStream = fs.createReadStream('./public/uploads/tmp_'+ id + '.jpg')
-    const dimensions = sizeOf('./public/uploads/tmp_'+ id + '.jpg')
+    const readStream = fs.createReadStream('./tmp/tmp_'+ id + '.jpg')
+    const dimensions = sizeOf('./tmp/tmp_'+ id + '.jpg')
     let width,height;
     if(dimensions.width >= dimensions.height){
         width = 800;
@@ -32,5 +32,5 @@ module.exports = async function resize(id) {
         position: 'right top',
         background: { r: 255, g: 255, b: 255, alpha: 1 }
       });  
-    return readStream.pipe(transform).pipe(fs.createWriteStream('./public/uploads/tmp_'+ id +'_1.jpg'));
+    return readStream.pipe(transform).pipe(fs.createWriteStream('./tmp/tmp_'+ id +'_1.jpg'));
 }
