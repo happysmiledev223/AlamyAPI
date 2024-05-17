@@ -10,7 +10,7 @@ function SearchImage() {
     $("#images tbody").empty();
     let str = $(".dropdown-toggle").html() + ' ' + $("#search").val();
     $.ajax({
-        url: '/alamy/getacesstoken?client=' + $("#alamy_cli").val() + '&key=' + $("#alamy_key").val(),
+        url: '/alamy/getacesstoken',
         type: 'Get',
         success: function (result) {
             if(result.statusCode == 200){
@@ -84,7 +84,7 @@ function addProduct(id){
                     product_type: product_type,
                     images: [
                         {
-                            "src": "http://amazed-monster-relieved.ngrok-free.app/uploads/tmp_"+ id +"_1.jpg"
+                            "src": "http://alamy-api.vercel.app/uploads/tmp_"+ id +"_1.jpg"
                         }
                     ],
                     tags : tags
@@ -94,7 +94,7 @@ function addProduct(id){
                     type: 'Get',
                     success: function (result) {
                         $.ajax({
-                            url: '/shopify/create-product?id=' + id + '&api_key=' + $("#shopify_key").val(),
+                            url: '/shopify/create-product?id=' + id,
                             type: 'Post', 
                             processData: false,
                             data: JSON.stringify(product),
