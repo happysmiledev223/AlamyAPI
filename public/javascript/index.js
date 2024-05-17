@@ -1,3 +1,5 @@
+const e = require("express");
+
 let data;
 let token;
 let saved_cnt = 0;
@@ -125,8 +127,18 @@ function addProduct(id){
 }
 
 function checkProduct(id){
-    // console.log(id);
-    products.push(id);
+    for(var i=0;i<products.length;i++){
+        if(products[i] == id)
+            break;
+    }
+    if(i == products.length){
+        products.push(id);
+    }
+    else{
+        for(var j=i+1;j<products.length;j++)
+            products[j-1] = products[j];
+        products.length -= 1;
+    }
 }
 function addProducts(){
     for(var i=0;i<products.length;i++){   
