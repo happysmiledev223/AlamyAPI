@@ -130,8 +130,8 @@ router.get('/downloaditem', function (req, res) {
             });
         };            
         try {
-            await download(response.body.url, '/tmp/tmp_'+ id +'.jpg', async function(res){
-              console.log(res);
+            await download(response.body.url, '/tmp/tmp_'+ id +'.jpg', async function(res1){
+              console.log(res1);
               await resize(id);
               res.json(response);
             });
