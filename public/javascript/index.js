@@ -84,7 +84,7 @@ function addProduct(id){
                     product_type: product_type,
                     images: [
                         {
-                            "src": "http://alamy-api.vercel.app/uploads/tmp_"+ id +"_1.jpg"
+                            "src": "http://alamy-api.vercel.app/tmp_"+ id +"_1.jpg"
                         }
                     ],
                     tags : tags
