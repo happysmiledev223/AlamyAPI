@@ -129,11 +129,17 @@ router.get('/downloaditem', function (req, res) {
                 request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
             });
         };            
-        download(response.body.url, '/tmp/tmp_'+ id +'.jpg', async function(){
-            console.log('done');
-            await resize(id);
-            res.json(response);
-        });
+        try {
+            await download(response.body.url, '/tmp/tmp_'+ id +'.jpg', async function(res){
+              console.log(res);
+              await resize(id);
+              res.json(response);
+            });
+          } catch (error) {
+            console.error('Error downloading or resizing image:', error);
+            // Handle the error here, e.g., send an error response to the client
+            res.status(500).json({ error: 'Failed to download or resize image' });
+          }
     })
     .catch(function (err) {
         console.log(err);
