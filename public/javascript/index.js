@@ -1,5 +1,3 @@
-const e = require("express");
-
 let data;
 let token;
 let saved_cnt = 0;
