@@ -10,9 +10,7 @@ router.get('/', function (req, res, next) {
     // res.render('app', { shop: shop });
 });
 router.get('/getacesstoken', function (req, res) {
-    let alamy_client = req.query.client;
-    let alamy_key= req.query.key;
-    let str = alamy_client + ":"+ alamy_key;
+    let str = process.env.ALAMY_CLIENT + ":"+ process.env.ALAMY_KEY;
     // let auth = window.btoa(str);
     let auth = Buffer.from(str, 'utf8').toString('base64');
 
