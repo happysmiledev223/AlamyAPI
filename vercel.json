@@ -15,12 +15,8 @@
     ],
     "rewrites": [
         { 
-            "source": "/alamy/(.*)", 
+            "source": "/(.*)", 
             "destination": "/alamy" 
-        },
-        { 
-            "source": "/shopify/(.*)", 
-            "destination": "/shopify" 
         }
     ]
   }
