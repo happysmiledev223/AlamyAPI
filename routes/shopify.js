@@ -36,7 +36,7 @@ router.post('/create-product', function (req, res) {
     request.post(options)
     .then(function (response) {
         // Asynchronously delete a file
-        fs.unlink(process.cwd() + '/tmp/tmp_' + id + '.jpg', (err) => {
+        fs.unlink('/tmp/tmp_' + id + '.jpg', (err) => {
             if (err) {
             // Handle specific error if any
                 if (err.code === 'ENOENT') {
@@ -48,7 +48,7 @@ router.post('/create-product', function (req, res) {
                 console.log('File deleted!');
             }
         });
-        fs.unlink(process.cwd() + '/tmp/tmp_' + id + '_1.jpg', (err) => {
+        fs.unlink('/tmp/tmp_' + id + '_1.jpg', (err) => {
             if (err) {
             // Handle specific error if any
                 if (err.code === 'ENOENT') {
@@ -64,7 +64,7 @@ router.post('/create-product', function (req, res) {
     })
     .catch(function (err) {
         console.log(err);
-        fs.unlink(process.cwd() + '/tmp/tmp_' + id + '.jpg', (err) => {
+        fs.unlink('/tmp/tmp_' + id + '.jpg', (err) => {
             if (err) {
             // Handle specific error if any
                 if (err.code === 'ENOENT') {
@@ -76,7 +76,7 @@ router.post('/create-product', function (req, res) {
                 console.log('File deleted!');
             }
         });
-        fs.unlink(process.cwd() + '/tmp/tmp_' + id + '_1.jpg', (err) => {
+        fs.unlink('/tmp/tmp_' + id + '_1.jpg', (err) => {
             if (err) {
             // Handle specific error if any
                 if (err.code === 'ENOENT') {
