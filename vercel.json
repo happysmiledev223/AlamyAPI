@@ -12,5 +12,15 @@
       "src": "/(.*)",
       "dest": "app.js"
      }
+    ],
+    "rewrites": [
+        { 
+            "source": "/alamy/(.*)", 
+            "destination": "/alamy" 
+        },
+        { 
+            "source": "/shopify/(.*)", 
+            "destination": "/shopify" 
+        }
     ]
-   }
+  }
