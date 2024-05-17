@@ -1,0 +1,4 @@
+.disabled-row {
+  pointer-events: none;
+  opacity: 0.5; /* Optionally reduce the opacity to indicate the disabled state */
+}

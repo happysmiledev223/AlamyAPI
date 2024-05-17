@@ -1,0 +1,89 @@
+<br>
+<div class="row justify-content-between" style="padding-left: 15%;padding-right: 15%;">
+    <label for="usr">Alamy Client:</label>
+    <input type="text" class="form-control" id="alamy_cli" style="width: 80%;">
+</div>
+<br>
+<div class="row justify-content-between" style="padding-left: 15%;padding-right: 15%;">
+    <label for="usr">Alamy Secret Key:</label>
+    <input type="password" class="form-control" id="alamy_key" style="width: 80%;">
+</div>
+<br>
+<div class="row justify-content-between" style="padding-left: 15%;padding-right: 15%;">
+    <label for="usr">Shopify API key:</label>
+    <input type="password" class="form-control" id="shopify_key" style="width: 80%;">
+</div>
+<div class="row" style="padding-left: 15%;padding-right: 15%;">
+  <div class="input-group mt-3 mb-3">
+    <div class="input-group-prepend">
+      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+        Categories
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Abstracts and backgrounds</a>
+        <a class="dropdown-item" href="#">Animals and wildlife</a>
+        <a class="dropdown-item" href="#">Architecture and interiors</a>
+        <a class="dropdown-item" href="#">Archive or historical</a>
+        <a class="dropdown-item" href="#">Art and artwork</a>
+        <a class="dropdown-item" href="#">Business</a>
+        <a class="dropdown-item" href="#">Celebration and life events</a>
+        <a class="dropdown-item" href="#">Concepts</a>
+        <a class="dropdown-item" href="#">Education</a>
+        <a class="dropdown-item" href="#">Entertainment and celebrities</a>
+        <a class="dropdown-item" href="#">Food and drink</a>
+        <a class="dropdown-item" href="#">Healthcare and medical</a>
+        <a class="dropdown-item" href="#">Industry and agriculture</a>
+        <a class="dropdown-item" href="#">Landscapes</a>
+        <a class="dropdown-item" href="#">Lifestyle</a>
+        <a class="dropdown-item" href="#">News and reportage</a>
+        <a class="dropdown-item" href="#">Objects and still life</a>
+        <a class="dropdown-item" href="#">Occupations</a>
+        <a class="dropdown-item" href="#">Plant and gardens</a>
+        <a class="dropdown-item" href="#">Science</a>
+        <a class="dropdown-item" href="#">Sport</a>
+        <a class="dropdown-item" href="#">Technology</a>
+        <a class="dropdown-item" href="#">Transport</a>
+        <a class="dropdown-item" href="#">Travel</a>
+        <a class="dropdown-item" href="#">Weather or seasons</a>
+      </div>
+    </div>
+    <input type="text" class="form-control" placeholder="Search" id="search">
+    <div class="input-group-append">
+      <button class="btn btn-success" onclick="SearchImage()">Search</button>
+    </div>
+    <div class="input-group-append" style="margin-left: 5px;">
+      <button class="btn btn-primary" onclick="addProducts()">Add Product</button>
+    </div>
+  </div>
+  <div class="card border border-primary" style="width:100%;">
+      <div class="card-body">
+          <table id="images" class="table">
+              <thead class="thead-dark">
+                  <tr>
+                      <th scope="col" style="5%"></th>
+                      <th scope="col">Image</th>
+                      <th scope="col" style="align-content: center;">ID</th>
+                      <th scope="col" style="align-content: center;">Title</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <h5 id="currentstatus">Wait a few minutes.</h5>
+            </div>
+            <div class="modal-footer" style="display: none;">
+            </div>
+        </div>
+    </div>
+</div>
