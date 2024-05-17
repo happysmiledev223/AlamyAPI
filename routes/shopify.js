@@ -36,58 +36,58 @@ router.post('/create-product', function (req, res) {
     request.post(options)
     .then(function (response) {
         // Asynchronously delete a file
-        fs.unlink('/tmp/tmp_' + id + '.jpg', (err) => {
-            if (err) {
-            // Handle specific error if any
-                if (err.code === 'ENOENT') {
-                    console.error('File does not exist.');
-                } else {
-                    throw err;
-            }
-            } else {
-                console.log('File deleted!');
-            }
-        });
-        fs.unlink('/tmp/tmp_' + id + '_1.jpg', (err) => {
-            if (err) {
-            // Handle specific error if any
-                if (err.code === 'ENOENT') {
-                    console.error('File does not exist.');
-                } else {
-                    throw err;
-            }
-            } else {
-                console.log('File deleted!');
-            }
-        });
+        // fs.unlink('/tmp/tmp_' + id + '.jpg', (err) => {
+        //     if (err) {
+        //     // Handle specific error if any
+        //         if (err.code === 'ENOENT') {
+        //             console.error('File does not exist.');
+        //         } else {
+        //             throw err;
+        //     }
+        //     } else {
+        //         console.log('File deleted!');
+        //     }
+        // });
+        // fs.unlink('/tmp/tmp_' + id + '_1.jpg', (err) => {
+        //     if (err) {
+        //     // Handle specific error if any
+        //         if (err.code === 'ENOENT') {
+        //             console.error('File does not exist.');
+        //         } else {
+        //             throw err;
+        //     }
+        //     } else {
+        //         console.log('File deleted!');
+        //     }
+        // });
         res.json(response);
     })
     .catch(function (err) {
         console.log(err);
-        fs.unlink('/tmp/tmp_' + id + '.jpg', (err) => {
-            if (err) {
-            // Handle specific error if any
-                if (err.code === 'ENOENT') {
-                    console.error('File does not exist.');
-                } else {
-                    throw err;
-            }
-            } else {
-                console.log('File deleted!');
-            }
-        });
-        fs.unlink('/tmp/tmp_' + id + '_1.jpg', (err) => {
-            if (err) {
-            // Handle specific error if any
-                if (err.code === 'ENOENT') {
-                    console.error('File does not exist.');
-                } else {
-                    throw err;
-            }
-            } else {
-                console.log('File deleted!');
-            }
-        });
+        // fs.unlink('/tmp/tmp_' + id + '.jpg', (err) => {
+        //     if (err) {
+        //     // Handle specific error if any
+        //         if (err.code === 'ENOENT') {
+        //             console.error('File does not exist.');
+        //         } else {
+        //             throw err;
+        //     }
+        //     } else {
+        //         console.log('File deleted!');
+        //     }
+        // });
+        // fs.unlink('/tmp/tmp_' + id + '_1.jpg', (err) => {
+        //     if (err) {
+        //     // Handle specific error if any
+        //         if (err.code === 'ENOENT') {
+        //             console.error('File does not exist.');
+        //         } else {
+        //             throw err;
+        //     }
+        //     } else {
+        //         console.log('File deleted!');
+        //     }
+        // });
         res.json(err);
     });
 });
